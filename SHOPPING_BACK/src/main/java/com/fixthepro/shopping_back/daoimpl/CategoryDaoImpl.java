@@ -17,9 +17,47 @@ public class CategoryDaoImpl implements CategoryDao{
 	private JdbcTemplate jdbc;
 
 	@Override
-	public List<Category> getCategories() {
+	public List<Category> findAll() {
 		StringBuilder select = new StringBuilder("select c.* from category c");
 		return jdbc.query(select.toString(), new CategoryRowMapper());
 	}
+
+	@Override
+	public List<Category> findAllActive() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean save(Category c) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean update(Category c) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean delete(int id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Category findById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Category> findLikeName(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
 
 }

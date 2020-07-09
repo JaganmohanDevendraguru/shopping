@@ -6,5 +6,17 @@ import com.fixthepro.shopping_back.dto.Category;
 
 public interface CategoryDao {
 
-	public List<Category> getCategories();
+	public List<Category> findAll();
+
+	public List<Category> findAllActive();
+
+	public boolean save(Category c);
+
+	public boolean update(Category c);
+
+	public boolean delete(int id);
+
+	public Category findById(int id);
+
+	public List<Category> findLikeName(String name);
 }

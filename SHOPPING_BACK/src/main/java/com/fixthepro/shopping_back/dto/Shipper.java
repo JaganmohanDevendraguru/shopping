@@ -1,6 +1,14 @@
 package com.fixthepro.shopping_back.dto;
 
-public class Shipper {
+import java.io.Serializable;
+/*
+ * @author Jagan
+ * @since 07/08/2020
+ * 
+ */
+public class Shipper implements Serializable{
+
+	private static final long serialVersionUID = 8257449404288351926L;
 	
 	private Integer shipperId;
 	private String companyName;
