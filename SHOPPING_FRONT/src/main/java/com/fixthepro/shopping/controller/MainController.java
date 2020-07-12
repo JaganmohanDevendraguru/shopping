@@ -5,20 +5,20 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.fixthepro.shopping_back.dao.CategoryDao;
+import com.fixthepro.shopping_back.service.CategoryService;
 
 @Controller
 public class MainController {
 
 	@Autowired
-	private CategoryDao categoryDao;
+	private CategoryService categoryService;
 	
 	@GetMapping(value= {"/", "/home", "/index"})
 	public ModelAndView index() {
 		ModelAndView mv = new ModelAndView("index");
 		mv.addObject("userClickHome", true);
 		mv.addObject("title", "Home");
-		mv.addObject("categories", categoryDao.getCategories());
+		mv.addObject("categories", categoryService.getListOfActiveCategories());
 		return mv;
 	}
 	

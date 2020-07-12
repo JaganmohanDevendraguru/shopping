@@ -10,11 +10,11 @@ public interface CategoryDao {
 
 	public List<Category> findAllActive();
 
-	public boolean save(Category c);
+	public int save(Category c);
 
-	public boolean update(Category c);
+	public int update(Category c);
 
-	public boolean delete(int id);
+	public int delete(int id);
 
 	public Category findById(int id);
 

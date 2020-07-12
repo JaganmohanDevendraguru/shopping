@@ -1,6 +1,10 @@
 package com.fixthepro.shopping_back.dto;
 
 import java.io.Serializable;
+
+import javax.validation.constraints.NotEmpty;
+
+import org.springframework.web.multipart.MultipartFile;
 /**
  * @author Jagan
  * @since 07/08/2020
@@ -13,7 +17,9 @@ public class Category implements Serializable {
 	private static final long serialVersionUID = -3561503180837181765L;
 	
 	private Integer categoryId;
+	@NotEmpty(message = "Category name cannot be empty")
 	private String categoryName;
+	@NotEmpty(message = "Description cannot be empty")
 	private String description;
 	
 	//we save the image in disk and keep the references here	
@@ -24,6 +30,7 @@ public class Category implements Serializable {
 	 */
 	
 	private boolean discontinued = false;
+	private MultipartFile file;
 	
 	public Category() {
 		super();
@@ -69,6 +76,13 @@ public class Category implements Serializable {
 	public void setDiscontinued(boolean discontinued) {
 		this.discontinued = discontinued;
 	}
+	public MultipartFile getFile() {
+		return file;
+	}
+	public void setFile(MultipartFile file) {
+		this.file = file;
+	}
+
 	@Override
 	public String toString() {
 		return "Category [categoryId=" + categoryId + ", categoryName=" + categoryName + ", description=" + description
